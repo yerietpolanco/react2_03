@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 export function PokemonData() {
     const { pokemon } = useParams();
@@ -13,15 +13,16 @@ export function PokemonData() {
 
     return (
         <div className="container">
-            {data && <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">{ pokemon }</h5>
-                    <p className="card-text"></p>
+            <NavLink to="/pokemons" className="btn btn-primary mb-3">Volver</NavLink>
+
+            {data && <div className="card pokemon">
+                <div className="card-body d-flex flex-column align-items-center">
                     <div className="card-image">
                         <img src={ data.sprites.front_default } alt={ pokemon } />
                     </div>
 
                     <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><strong>{ pokemon }</strong></li>
                         { data.stats.map(stat => (
                             <li className="list-group-item">
                                 { stat.stat.name }: { stat.base_stat }

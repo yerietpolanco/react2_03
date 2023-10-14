@@ -11,7 +11,7 @@ export function Nav() {
     }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
       <div className="container">
         <NavLink to="/" className={"navbar-brand"}>
           Pokémons
